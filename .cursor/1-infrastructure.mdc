@@ -1,0 +1,6 @@
+## Domain: Package Setup and Infrastructure
+
+* **Initialization:** Always use the `usethis` package for structural modifications. Use `usethis::use_package()` to set up the foundation.
+* **File Creation:** Never create structural files manually. Use `usethis::use_r("filename")` for scripts and `usethis::use_test("filename")` for tests.
+* **Licensing:** Default to the MIT License for all new packages. Execute `usethis::use_mit_license()` during package initialization.
+* **Version Control:** Ensure the project uses Git, initialized via `usethis::use_git()`.
