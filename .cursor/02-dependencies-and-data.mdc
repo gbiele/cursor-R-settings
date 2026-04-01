@@ -1,0 +1,9 @@
+## Domain: Dependency Management and Data Handling
+
+* **Strict Dependency Limitation:** Keep external dependencies to an absolute minimum to reduce package fragility and load times. Declare all dependencies in `DESCRIPTION`.
+* **Data Wrangling Philosophy (data.table):** Use `data.table` exclusively for all data manipulation. 
+    * *Rationale:* This ensures memory efficiency, high performance on large datasets, and minimizes the dependency footprint compared to the tidyverse ecosystem. 
+    * Do not use or suggest `dplyr`, `tidyr`, or `tibble`.
+* **Handling Non-Standard Evaluation (NSE):** To prevent `R CMD check` notes about "no visible binding for global variable" caused by `data.table` syntax (e.g., column names, `.SD`, `.BY`, `.N`), explicitly declare these variables. Create an `R/globals.R` file and use `utils::globalVariables(c("colName", ".SD", ".N"))`.
+* **Test Framework Declaration:** Declare `testthat` in `Suggests`. *Exception:* If the package explicitly exports testing utilities for other packages, place `testthat` in `Imports`.
+* **Namespace Resolution:** Call external functions using explicit namespace resolution: `package::function()`. Avoid global `@import` to prevent collisions; use `@importFrom package function` sparingly.
