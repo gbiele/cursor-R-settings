@@ -1,0 +1,7 @@
+## Domain: Documentation and Namespaces
+
+* **Tooling:** Use `roxygen2` syntax (`#'`) for all documentation directly within the `.R` source files. Never manually edit the `NAMESPACE` file or `.Rd` files in the `man/` directory.
+* **Style:** Keep documentation clear, concise, and highly factual. Omit conversational filler.
+* **Function Tags:** Every exported function must include `@title`, `@description`, `@param` (for all arguments), `@return` (specifying the output type), `@export`, and minimal, reproducible `@examples`.
+* **Relational Tags:** Use `@seealso` to link to related functions or external documentation. Use `@family <family_name>` to group related functions together in the package index.
+* **Generation:** Execute `devtools::document()` continuously to regenerate `.Rd` files and update the `NAMESPACE`.
