@@ -1,0 +1,7 @@
+## Domain: Testing, Modularity, and Quality Assurance
+
+* **Framework:** Implement unit tests for all functions using the `testthat` package. Store all tests within the `tests/testthat/` directory.
+* **Modularity:** Design functions to do exactly one thing. If a function exceeds 50 lines of logic, decompose it into smaller, private, testable helper functions (not exported).
+* **Test Coverage:** Write tests that cover expected behavior, edge cases, and expected failures (using `expect_error()` or `expect_warning()`).
+* **Quality Control:** Execute `devtools::check()` frequently. The package must pass with 0 Errors and 0 Warnings.
+* **Note Resolution:** Aim for 0 Notes. Legitimate notes (e.g., specific NSE bindings in `data.table` that escape `globalVariables()` masking, or CRAN-specific structural notes) are permitted but must be explicitly documented as expected exceptions in a `cran-comments.md` file.
